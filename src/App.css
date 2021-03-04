@@ -1,38 +1,103 @@
-.App {
+html, body{
+  margin: 0;
+}
+.app{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #5580FF;
+}
+
+.quiz{
+  border-radius: 10px;
+  /* background-color: #212843; */
+  background: linear-gradient(-45deg,#212843, #212574);
+  padding: 10px;
+  width: 600px;
+  height: 300px;
+  color: #ddd;
+}
+
+.quiz__score{
+  font-size: 20px;
+  font-weight: 700;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.quiz__score-text{
+  margin: 0;
+}
+
+.quiz__inner{
+  display: flex;
+  flex-direction: column;
+}
+
+.quiz__title{
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 30px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.quiz__content{
+  display: flex;
+  justify-content: space-between;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.quiz__question{
+  width: 49%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.quiz__question-count{
+  font-size: 15px;
+  margin: 0;
+}
+
+.quiz__question-count span{
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.quiz__question-text{
+  font-size: 20px;
+}
+
+.quiz__answer{
+  width: 49%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /* padding: 10px 0; */
 }
 
-.App-link {
-  color: #61dafb;
+.quiz__answer-btn{
+  font-size: 15px;
+  font-weight: 700;
+  width: 100%;
+  padding: 5px;
+  border: 3px solid #5667AC;
+  border-radius: 10px;
+  background-color: transparent;
+  color: #ddd;
+  outline: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background .2s linear, 
+    color .2s linear;
+}
+.quiz__answer-btn:hover{
+  background-color: #5667AC;
+  color: #000;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.quiz__answer-btn:last-child{
+  margin-bottom: 0;
 }
