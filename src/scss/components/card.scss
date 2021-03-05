@@ -1,23 +1,30 @@
 .cards-list{
     display: flex;
     width: 100%;
+    justify-content: flex-start;
     margin-top: 50px;
 }
 
 .card{
-    width: 25%;
+    width: 20%;
     height: 150px;
     border-radius: 10px;
     padding: 10px;
     background-color: $primary;
     text-decoration: none;
     color: inherit;
+    margin-right: 5%;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    position: relative;
     transition: background .4s linear;
 
+    &:last-child{
+        margin-right: 0;
+    }
     &:focus{
         outline: none;
     }
@@ -26,8 +33,30 @@
         background-color: $secondary;
     }
 
-    &__title{
-        font-size: 20px;
+    // &__mask{
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     right: 0;
+    //     bottom: 0;
+    //     z-index: 2;
+    //     // background-image: linear-gradient(rgba($secondary, .5)), url('../..//images/flags/eu.png');
+    //     background-image: linear-gradient(rgba($secondary, .5)), url('../..//images/flags/eu.png');
+    //     background-repeat: no-repeat;
+    //     background-position: center;
+    //     background-size: cover;
 
+    // }
+
+    &__title{
+        letter-spacing: 2px;
+        text-align: center;
+        line-height: 1.2;
+        font-size: 20px;
+        span{
+            font-size: 15px;
+            text-transform: uppercase;
+            width: 100%;
+        }
     }
 }

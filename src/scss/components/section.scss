@@ -1,5 +1,9 @@
 .section{
-    
+    margin-bottom: 100px;
+
+    &:last-child{
+        margin-bottom: 0;
+    }
     &__inner{
 
     }
