@@ -25,13 +25,41 @@ html, body{
   font-weight: 700;
   height: 100%;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-
+  align-items: center;
 }
 
 .quiz__score-text{
   margin: 0;
+  margin-bottom: 30px;
+}
+
+.quiz__score-btns{
+
+}
+
+.quiz__score-btn{
+  margin: 0;
+  padding: 10px;
+  border-radius: 10px;
+  border: 3px solid #5667AC;
+  background-color: transparent;
+  margin-right: 20px;
+  color: #ddd;
+  cursor: pointer;
+  font-weight: 600;
+  transiton: background .2s linear,
+    color .2s linear;
+}
+
+.quiz__score-btn:last-child{
+  margin-right: 0;
+}
+
+.quiz__score-btn:hover{
+  background-color: #5667AC;
+  color: #000;
 }
 
 .quiz__inner{

@@ -1,31 +1,9 @@
 import React, {useState} from 'react'
 import './App.css';
 
+import quiz from './data/quiz'
+
 function App() {
-
-  const quiz = [
-    {
-      questionText: 'What the capital of Russia?',
-      questionImage: '/',
-      answerOptions: [
-        { answerText: 'Paris', isCorrect: false },
-        { answerText: 'Moscow', isCorrect: true },
-        { answerText: 'London', isCorrect: false },
-        { answerText: 'Rome', isCorrect: false }
-      ]
-    },
-
-    {
-      questionText: 'What the capital of Germany?',
-      questionImage: '/',
-      answerOptions: [
-        { answerText: 'Minsk', isCorrect: false },
-        { answerText: 'Madrid', isCorrect: false },
-        { answerText: 'Barcelona', isCorrect: false },
-        { answerText: 'Berlin', isCorrect: true }
-      ]
-    }
-  ];
 
   const [currentAnswer, setCurrentAnswer] = useState(0);
 
@@ -43,6 +21,12 @@ function App() {
     }
     else setShowScore(true);
   }
+
+  const handleRepeatQuiz = () =>{
+    setShowScore(false);
+    setScore(0);
+    setCurrentAnswer(0);
+  }
   
 
   return (
@@ -52,6 +36,10 @@ function App() {
           showScore ? (
             <div className="quiz__score">
               <p className="quiz__score-text">You scored {score} out of {quiz.length}</p>
+              <div className="quiz__score-btns">
+                <button className="quiz__score-btn" onClick={handleRepeatQuiz} >Again</button>
+                <button className="quiz__score-btn">Another one</button>
+              </div>
             </div>
           ) :
           (
