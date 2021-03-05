@@ -1,0 +1,35 @@
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    &__label-text{
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+
+    &__input{
+        font-size: 15px;
+        font-weight: 700;
+        padding: 5px;
+        border: 3px solid #5667AC;
+        border-radius: 10px;
+        background-color: transparent;
+        color: #ddd;
+        outline: none;
+        text-align: center;
+        transition: background .2s linear, 
+            color .2s linear;
+
+        &:hover{
+            background-color: #5667AC;
+            color: #000;
+        }
+
+        &:focus{
+            background-color: #5667AC;
+            color: #000;
+        }
+    }
+}

@@ -12,6 +12,8 @@ function App() {
 
   const [score, setScore] = useState(0);
 
+  const [toggleMode, setToggleMode] = useState(false);
+
   const handleAnswerBtnClick = (isCorrect) =>{
     if(isCorrect === true){
       setScore(score + 1);
@@ -29,6 +31,9 @@ function App() {
     setCurrentAnswer(0);
   }
   
+  const handleCheckboxClick =() =>{
+    setToggleMode(!toggleMode);
+  }
 
   return (
     <div className="wrapper">
@@ -50,13 +55,35 @@ function App() {
                 <div className="quiz__question">
                   <p className="quiz__question-count"><span>Question {currentAnswer + 1}</span>/{quiz.length}</p>
                   <p className="quiz__question-text">{quiz[currentAnswer].questionText}</p>
+                  <div className="quiz__mode">
+                    <label className="check" htmlFor="check-input">
+                      {/* <p className="checkbox__text">Hard Mode</p> */}
+                      Hard Mode
+                      <input id="check-input" className="check__input" type="checkbox" onChange={handleCheckboxClick} checked={toggleMode}/>
+                      <span className="check__slider"></span>
+                    </label>
+                  </div>
                 </div>
                 <div className="quiz__answer">
-                  {
-                    quiz[currentAnswer].answerOptions.map((answerOption, index) => (
-                      <button className="btn" onClick={()=>handleAnswerBtnClick(answerOption.isCorrect)} key={index}>{answerOption.answerText}</button>
-                    ))
-                  }
+                {
+                  toggleMode ? (
+                      <form className="form">
+                        <label className="form__label" htmlFor="form-input">
+                          <p className="form__label-text">Type the name of the capital here:</p>
+                          <input id="form-input" type="text" className="form__input"/>
+                        </label>
+                      </form>
+                  ) :
+                  (
+                    <div>
+                      {
+                        quiz[currentAnswer].answerOptions.map((answerOption, index) => (
+                            <button className="btn" onClick={()=>handleAnswerBtnClick(answerOption.isCorrect)} key={index}>{answerOption.answerText}</button>
+                        ))
+                      }
+                    </div>
+                  )
+                }
                 </div>
               </div>
             </div>
