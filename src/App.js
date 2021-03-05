@@ -55,7 +55,7 @@ function App() {
                 <div className="quiz__question">
                   <p className="quiz__question-count"><span>Question {currentAnswer + 1}</span>/{quiz.length}</p>
                   <p className="quiz__question-text">{quiz[currentAnswer].questionText}</p>
-                  <div className="quiz__mode">
+                  <div className="quiz__control">
                     <label className="check" htmlFor="check-input">
                       {/* <p className="checkbox__text">Hard Mode</p> */}
                       Hard Mode
@@ -70,7 +70,7 @@ function App() {
                       <form className="form">
                         <label className="form__label" htmlFor="form-input">
                           <p className="form__label-text">Type the name of the capital here:</p>
-                          <input id="form-input" type="text" className="form__input"/>
+                          <input id="form-input" type="text" className="form__input" autoComplete="off"/>
                         </label>
                       </form>
                   ) :
