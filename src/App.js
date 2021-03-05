@@ -1,11 +1,16 @@
 import React, {useState} from 'react'
 
+import {
+  HashRouter,
+  Route,
+  Link
+} from "react-router-dom";
 
-import Header from './components/Header';
-import Main from './components/Main';
 import './scss/main.scss';
 
-import quiz from './data/quiz'
+import Header from './components/Header';
+import Home from './pages/Home';
+import Quiz from './pages/Quiz';
 
 function App() {
 
@@ -40,9 +45,13 @@ function App() {
 
   return (
     <div className="wrapper">
-      <Header/>
+      <HashRouter basename="/">
+        <Header/>
 
-      <Main />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/quiz" component={Quiz} />
+      </HashRouter>
+
       {/* <div className="quiz">
         {
           showScore ? (
