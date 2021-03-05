@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
-import './App.css';
+
+import './scss/main.scss';
 
 import quiz from './data/quiz'
 
@@ -30,15 +31,15 @@ function App() {
   
 
   return (
-    <div className="app">
+    <div className="wrapper">
       <div className="quiz">
         {
           showScore ? (
             <div className="quiz__score">
               <p className="quiz__score-text">You scored {score} out of {quiz.length}</p>
               <div className="quiz__score-btns">
-                <button className="quiz__score-btn" onClick={handleRepeatQuiz} >Again</button>
-                <button className="quiz__score-btn">Another one</button>
+                <button className="btn" onClick={handleRepeatQuiz} >Again</button>
+                <button className="btn">Another one</button>
               </div>
             </div>
           ) :
@@ -53,7 +54,7 @@ function App() {
                 <div className="quiz__answer">
                   {
                     quiz[currentAnswer].answerOptions.map((answerOption, index) => (
-                      <button className="quiz__answer-btn" onClick={()=>handleAnswerBtnClick(answerOption.isCorrect)} key={index}>{answerOption.answerText}</button>
+                      <button className="btn" onClick={()=>handleAnswerBtnClick(answerOption.isCorrect)} key={index}>{answerOption.answerText}</button>
                     ))
                   }
                 </div>
