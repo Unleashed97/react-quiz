@@ -1,43 +1,49 @@
 import React, {useState} from 'react'
 
+
+import Header from './components/Header';
+import Main from './components/Main';
 import './scss/main.scss';
 
 import quiz from './data/quiz'
 
 function App() {
 
-  const [currentAnswer, setCurrentAnswer] = useState(0);
+  // const [currentAnswer, setCurrentAnswer] = useState(0);
 
-  const [showScore, setShowScore] = useState(false);
+  // const [showScore, setShowScore] = useState(false);
 
-  const [score, setScore] = useState(0);
+  // const [score, setScore] = useState(0);
 
-  const [toggleMode, setToggleMode] = useState(false);
+  // const [toggleMode, setToggleMode] = useState(false);
 
-  const handleAnswerBtnClick = (isCorrect) =>{
-    if(isCorrect === true){
-      setScore(score + 1);
-    }
-    let nextAnswer = currentAnswer + 1;
-    if(nextAnswer < quiz.length){
-      setCurrentAnswer(nextAnswer);
-    }
-    else setShowScore(true);
-  }
+  // const handleAnswerBtnClick = (isCorrect) =>{
+  //   if(isCorrect === true){
+  //     setScore(score + 1);
+  //   }
+  //   let nextAnswer = currentAnswer + 1;
+  //   if(nextAnswer < quiz.length){
+  //     setCurrentAnswer(nextAnswer);
+  //   }
+  //   else setShowScore(true);
+  // }
 
-  const handleRepeatQuiz = () =>{
-    setShowScore(false);
-    setScore(0);
-    setCurrentAnswer(0);
-  }
+  // const handleRepeatQuiz = () =>{
+  //   setShowScore(false);
+  //   setScore(0);
+  //   setCurrentAnswer(0);
+  // }
   
-  const handleCheckboxClick =() =>{
-    setToggleMode(!toggleMode);
-  }
+  // const handleCheckboxClick =() =>{
+  //   setToggleMode(!toggleMode);
+  // }
 
   return (
     <div className="wrapper">
-      <div className="quiz">
+      <Header/>
+
+      <Main />
+      {/* <div className="quiz">
         {
           showScore ? (
             <div className="quiz__score">
@@ -57,7 +63,6 @@ function App() {
                   <p className="quiz__question-text">{quiz[currentAnswer].questionText}</p>
                   <div className="quiz__control">
                     <label className="check" htmlFor="check-input">
-                      {/* <p className="checkbox__text">Hard Mode</p> */}
                       Hard Mode
                       <input id="check-input" className="check__input" type="checkbox" onChange={handleCheckboxClick} checked={toggleMode}/>
                       <span className="check__slider"></span>
@@ -90,7 +95,8 @@ function App() {
           )
         }
 
-      </div>
+      </div> */}
+
     </div>
   );
 }
