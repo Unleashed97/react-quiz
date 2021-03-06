@@ -65,9 +65,37 @@
     margin: 0 auto;
 }
 
+.btn{
+    width: 100%;
+    border: 3px solid $primary;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 30px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    background-color: transparent;
+    transition: background .2s linear,
+        color .2s linear;
+
+    &:hover{
+        background-color: $secondary;
+        border-color: $secondary;
+        color: #000;
+    }
+    &:focus{
+        outline: none;
+    }
+    &:last-child{
+        margin-bottom: 0;
+    }
+}
+
 @import 'components/header';
 @import 'components/nav';
 @import 'components/burger';
 @import 'components/main-content';
 @import 'components/section';
 @import 'components/card';
+@import 'components/quiz';
+@import 'components/check';
