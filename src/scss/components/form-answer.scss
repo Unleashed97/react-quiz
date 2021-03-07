@@ -1,0 +1,31 @@
+.form-answer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__title{
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+
+    &__input{
+        background-color: $primary;
+        border: 3px solid transparent;
+        border-radius: 10px;
+        padding: 10px;
+        outline: 0;
+        font-size: 20px;
+        width: 50%;
+        height: 40px;
+        transition: background .2s linear,
+            border .2s linear;
+
+        &:focus{
+            border-color: $secondary;
+        }
+        // &:hover{
+        //     background-color: $secondary;
+        // }
+    }
+}

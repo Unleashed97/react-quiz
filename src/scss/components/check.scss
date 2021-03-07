@@ -1,44 +1,105 @@
+// .check{
+//     position: relative;
+//     font-size: 18px;
+//     font-weight: 600;
+
+//     &__input{
+//         -webkit-appearance: none;
+//         -moz-appearance: none;
+//         appearance: none;
+
+//         &:checked + .check__slider{
+//             background-color: #5667AC;
+//         }
+//         &:focus + .check__slider{
+//             box-shadow: 0 0 1px #2196F3;
+//         }
+//         &:checked + .check__slider::after{
+//             transform: translateX(20px);
+//         }
+//     }
+
+//     &__slider{
+//         position: absolute;
+//         cursor: pointer;
+//         top: 0;
+//         left: 110%;
+//         width: 50px;
+//         height: 26px;
+//         border-radius: 20px;
+//         background-color: #ccc;
+
+//         &::after{
+//             position: absolute;
+//             top: 3px;
+//             content: "";
+//             width: 20px;
+//             height: 20px;
+//             left: 4px;
+//             border-radius: 50%;
+//             background-color: white;
+//             transition: transform .2s linear;
+//         }
+//     }
+// }
+
 .check{
-    position: relative;
-    font-size: 18px;
-    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    &__text{
+        margin-right: 10px;
+    }
 
     &__input{
         -webkit-appearance: none;
-        -moz-appearance: none;
         appearance: none;
 
         &:checked + .check__slider{
-            background-color: #5667AC;
+            background-color: $secondary;
+            border-color: $secondary;
         }
         &:focus + .check__slider{
-            box-shadow: 0 0 1px #2196F3;
+            border-color: $secondary;
         }
+
         &:checked + .check__slider::after{
-            transform: translateX(20px);
+            transform: translateX(15px);
         }
+    
     }
 
     &__slider{
-        position: absolute;
+        display: block;
+        width: 40px;
+        height: 25px;
+        // background-color: $primary;
+        border-radius: 10px;
+        border: 2px solid $primary;
         cursor: pointer;
-        top: 0;
-        left: 120%;
-        width: 50px;
-        height: 26px;
-        border-radius: 20px;
-        background-color: #ccc;
+        position: relative;
+
+        transition: border .2s linear,
+            background .2s linear;
+
+
+        &:hover{
+            border-color: $secondary;
+        }
 
         &::after{
+            display: block;
+            content: '';
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: #fff;
+
             position: absolute;
             top: 3px;
-            content: "";
-            width: 20px;
-            height: 20px;
-            left: 4px;
-            border-radius: 50%;
-            background-color: white;
-            transition: transform .2s linear;
+            left: 3px;
+            transition: transform .3s linear;
         }
     }
 }

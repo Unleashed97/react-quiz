@@ -49,6 +49,11 @@
 // @import 'components/form';
 
 
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
 .wrapper{
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
@@ -98,4 +103,6 @@
 @import 'components/section';
 @import 'components/card';
 @import 'components/quiz';
+@import 'components/control';
 @import 'components/check';
+@import 'components/form-answer';

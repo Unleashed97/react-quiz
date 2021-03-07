@@ -1,7 +1,5 @@
 import React from 'react'
 
-import Main from '../components/Main';
-
 const Home = () => {
     return (
         <main className="main-content">
