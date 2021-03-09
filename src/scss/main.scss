@@ -11,12 +11,17 @@
     box-sizing: border-box;
 }
 .wrapper{
+    display: flex;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 15px;
     color: #fff;
     height: 100vh;
     background: linear-gradient(to bottom right, #B08AF7, #3d1e77);
+    overflow: hidden;
+}
+.main{
+    width: 100%;
 }
 
 .container{
@@ -54,7 +59,6 @@
 
 @import 'components/header';
 @import 'components/nav';
-@import 'components/burger';
 @import 'components/main-content';
 @import 'components/section';
 @import 'components/card';
@@ -62,3 +66,5 @@
 @import 'components/control';
 @import 'components/check';
 @import 'components/form-answer';
+@import 'components/sidebar';
+@import 'components/burger';

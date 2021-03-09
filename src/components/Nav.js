@@ -1,16 +1,11 @@
 import React from 'react'
 
-
 import {
     BrowserRouter as Router,
-    Switch,
-    Route,
-    Link,
-    BrowserRouter
+    Link
 } from "react-router-dom";
 
-import Home from '../pages/Home';
-import Quiz from '../pages/Quiz';
+import Burger from './Burger';
 
 const Nav = () => {
     return (
@@ -21,6 +16,9 @@ const Nav = () => {
                         </li>
                         <li className="nav__item">
                             <Link to="/quiz" className="nav__link">Quizzes</Link>
+                        </li>
+                        <li className="nav__item">
+                            <Burger/>
                         </li>
                 </ul>
         </nav>

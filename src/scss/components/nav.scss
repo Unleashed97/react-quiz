@@ -2,6 +2,7 @@
     width: 100%;
     &__list{
         display: flex;
+        align-items: center;
         justify-content: flex-end;
     }
 
@@ -14,7 +15,6 @@
     }
 
     &__link{
-        
         display: block;
         border-radius: 8px;
         background-color: $primary;

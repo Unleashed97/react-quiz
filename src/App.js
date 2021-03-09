@@ -15,12 +15,27 @@ import Quiz from './pages/Quiz';
 function App() {
   return (
     <div className="wrapper">
-      <HashRouter basename="/">
-        <Header/>
-
+      {/* <input id="toggle-menu__input" className="toggle-menu__input" type="checkbox"/>
+        <label className="toggle-menu" htmlFor="toggle-menu__input">
+            <span className="burger">
+                <div className="burger__item"></div>
+                <div className="burger__item"></div>
+                <div className="burger__item"></div>
+            </span>
+        </label> */}
+      
+      <div className="main">
+        <HashRouter basename="/">
+          <Header/>
           <Route exact path="/" component={Home} />
           <Route exact path="/quiz" component={Quiz} />
-      </HashRouter>
+        </HashRouter>
+      </div>
+      <div className="sidebar">
+        some text
+      </div>
+     
+      
     </div>
   );
 }

@@ -3,7 +3,8 @@ import React, {useState} from 'react'
 
 import quiz from '../data/quiz';
 
-// import image from '../images/austria.jpg';
+
+import image from '../images/austria.jpg';
 
 const Quiz = () => {
 
@@ -42,11 +43,11 @@ const Quiz = () => {
                                     <p className="quiz__score-text">You scored {score} out of {quiz.length}</p>
                                 </div>
                             ) :
-
+                            
                             (
                                 <div className="quiz__content">
                                     <div className="quiz__image">
-                                        <img src="" alt=""/>
+                                        <img src={`../${quiz[currentQuestion].questionImage}`} alt=""/>
                                     </div>
                                     <div className="quiz__text-block">
                                         <div className="control">

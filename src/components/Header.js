@@ -9,7 +9,7 @@ const Header = () => {
             <div className="container">
                 <div className="header__inner">
                     <Nav/>
-                    <Burger/>
+                    {/* <Burger/> */}
                 </div>
             </div>
         </header>
