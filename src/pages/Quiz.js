@@ -14,7 +14,9 @@ const Quiz = () => {
 
     const [score, setScore] = useState(0);
 
-    const [showScore, setShowScore] = useState(true);
+    const [showScore, setShowScore] = useState(false);
+
+    const [inputAnswer, setInputAnswer] = useState('');
 
     const handleCheckboxClick = () =>{
         setAnswerMode(!answerMode);
@@ -40,6 +42,30 @@ const Quiz = () => {
         setShowScore(false);
         setScore(0);
         setCurrentQuestion(0);
+    }
+
+    const handleSubmitAnswerForm = (event) =>{
+        event.preventDefault();
+
+        let correctAnswer;
+        quiz[currentQuestion].answerOptions.map((item)=>{
+            if(item.isCorrect === true){
+                correctAnswer = item.answerText;
+            }
+        })
+
+        if(inputAnswer.toUpperCase() === correctAnswer.toUpperCase()){
+            setScore(score +1);
+            let nextQuestion = currentQuestion + 1;
+            if(nextQuestion < quiz.length){
+                setCurrentQuestion(nextQuestion);
+            }
+            else{
+                setShowScore(true);
+            }
+            setInputAnswer('');
+        }
+        else console.log('wrong');
     }
     return (
         <>
@@ -83,8 +109,8 @@ const Quiz = () => {
                                         <div className="quiz__answer">
                                             {
                                                 answerMode ? (
-                                                    <form className="form-answer">
-                                                        <input className="form-answer__input" type="text" placeholder="Your answer" autoComplete="off"/>
+                                                    <form className="form-answer" onSubmit={handleSubmitAnswerForm}>
+                                                        <input className="form-answer__input" type="text" placeholder="Your answer"  value={inputAnswer} autoComplete="off" onChange={event => setInputAnswer(event.target.value)}/>
                                                     </form>
                                                 ) :
 
