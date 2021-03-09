@@ -4,7 +4,7 @@ import React, {useState} from 'react'
 import quiz from '../data/quiz';
 
 
-import image from '../images/austria.jpg';
+// import image from '../images/austria.jpg';
 
 const Quiz = () => {
 
@@ -14,7 +14,7 @@ const Quiz = () => {
 
     const [score, setScore] = useState(0);
 
-    const [showScore, setShowScore] = useState(false);
+    const [showScore, setShowScore] = useState(true);
 
     const handleCheckboxClick = () =>{
         setAnswerMode(!answerMode);
@@ -30,7 +30,17 @@ const Quiz = () => {
         else{
             setShowScore(true);
         }
-    } 
+    }
+
+    const handleCheckAnswersBtnClick = () =>{
+
+    }
+
+    const handleTryAgainbtnClick = ()=> {
+        setShowScore(false);
+        setScore(0);
+        setCurrentQuestion(0);
+    }
     return (
         <>
             <div className="quiz">
@@ -41,13 +51,18 @@ const Quiz = () => {
                             showScore ? (
                                 <div className="quiz__score">
                                     <p className="quiz__score-text">You scored {score} out of {quiz.length}</p>
+
+                                    <div className="quiz__score-btns">
+                                        <button className="btn btn--score" onClick={handleCheckAnswersBtnClick}>Check answers</button>
+                                        <button className="btn btn--score" onClick={handleTryAgainbtnClick}>Try again</button>
+                                    </div>
                                 </div>
                             ) :
                             
                             (
                                 <div className="quiz__content">
                                     <div className="quiz__image">
-                                        <img src={`../${quiz[currentQuestion].questionImage}`} alt=""/>
+                                        <img src='' alt=""/>
                                     </div>
                                     <div className="quiz__text-block">
                                         <div className="control">
