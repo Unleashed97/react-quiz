@@ -65,7 +65,13 @@ const Quiz = () => {
             }
             setInputAnswer('');
         }
-        else console.log('wrong');
+        else {
+            let nextQuestion = currentQuestion + 1;
+            if(nextQuestion < quiz.length){
+                setCurrentQuestion(nextQuestion);
+            }
+            setInputAnswer('');
+        }
     }
     return (
         <>
