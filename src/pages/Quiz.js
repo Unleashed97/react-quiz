@@ -48,7 +48,7 @@ const Quiz = () => {
         event.preventDefault();
 
         let correctAnswer;
-        quiz[currentQuestion].answerOptions.map((item)=>{
+        quiz[currentQuestion].answerOptions.forEach((item)=>{
             if(item.isCorrect === true){
                 correctAnswer = item.answerText;
             }

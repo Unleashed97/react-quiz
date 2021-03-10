@@ -5,4 +5,8 @@
     height: 100%;
     background-color: $primary;
     transition: width .5s linear;
+
+    &.active{
+        width: 300px;
+    }
 }

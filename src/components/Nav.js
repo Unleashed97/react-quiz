@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 import {
     BrowserRouter as Router,
@@ -7,7 +7,7 @@ import {
 
 import Burger from './Burger';
 
-const Nav = () => {
+const Nav = ({toggleSidebar, props}) => {
     return (
         <nav className="nav">
                 <ul className="nav__list">
@@ -18,7 +18,7 @@ const Nav = () => {
                             <Link to="/quiz" className="nav__link">Quizzes</Link>
                         </li>
                         <li className="nav__item">
-                            <Burger/>
+                            <Burger toggleSidebar={toggleSidebar} handleBurgerBtnClick={props}/>
                         </li>
                 </ul>
         </nav>
