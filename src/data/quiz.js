@@ -111,7 +111,7 @@ const quiz = [
 
     {
       questionText: 'What the capital of Switzerland?',
-      questionImage: 'images/france.jpg',
+      questionImage: 'images/switzerland.jpg',
       answerOptions: [
         { answerText: 'Bern', isCorrect: true },
         { answerText: 'Madrid', isCorrect: false },
@@ -422,7 +422,7 @@ const quiz = [
 
     {
       questionText: 'What the capital of Portugal?',
-      questionImage: 'images/portugal1.jpg',
+      questionImage: 'images/portugal.jpg',
       answerOptions: [
         { answerText: 'Madrid', isCorrect: false },
         { answerText: 'Berlin', isCorrect: false },

@@ -17,32 +17,31 @@ import Quiz from './pages/Quiz';
 function App() {
   const [toggleSidebar, setToggleSidebar] = useState(false);
 
+  const [answerMode, setAnswerMode] = useState(false);
+
   const sidebarToggling = ()=>{
     setToggleSidebar(!toggleSidebar);
-    console.log(toggleSidebar);
   }
 
+
+  // Answer mode
+  const handleCheckboxClick = () =>{
+    setAnswerMode(!answerMode);
+}
+  
   return (
 
     <div className="wrapper">
-      {/* <input id="toggle-menu__input" className="toggle-menu__input" type="checkbox"/>
-        <label className="toggle-menu" htmlFor="toggle-menu__input">
-            <span className="burger">
-                <div className="burger__item"></div>
-                <div className="burger__item"></div>
-                <div className="burger__item"></div>
-            </span>
-        </label> */}
-      
       <div className="main">
         <HashRouter basename="/">
           <Header toggleSidebar={toggleSidebar} props={sidebarToggling}/>
           <Route exact path="/" component={Home} />
-          <Route exact path="/quiz" component={Quiz} />
+          <Route exact path="/quiz">
+            <Quiz answerMode={answerMode} onChangeAnswerMode={handleCheckboxClick}/>
+          </Route>
         </HashRouter>
       </div>
-      <Sidebar toggleSidebar={toggleSidebar}/>
-     
+      <Sidebar toggleSidebar={toggleSidebar} answerMode={answerMode} onChangeAnswerMode={handleCheckboxClick}/>
       
     </div>
   );

@@ -1,5 +1,28 @@
 .nav{
     width: 100%;
+
+    &--sidebar{
+        .nav__list{
+            flex-direction: column;
+            margin: 20px 0 10px 0;
+        }
+
+        .nav__item{
+            width: 100%;
+            text-align: center;
+            margin-right: 0;
+            margin-bottom: 10px;
+
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+
+        .nav__link{
+            padding: 20px;
+        }
+    }
+
     &__list{
         display: flex;
         align-items: center;

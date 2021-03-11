@@ -9,6 +9,7 @@ const Header = ({toggleSidebar, props}) => {
             <div className="container">
                 <div className="header__inner">
                     <Nav toggleSidebar={toggleSidebar} props={props}/>
+                    <Burger toggleSidebar={toggleSidebar} handleBurgerBtnClick={props}/>
                 </div>
             </div>
         </header>
