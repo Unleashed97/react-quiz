@@ -7,10 +7,10 @@ import {
 
 import Burger from './Burger';
 
-const Nav = ({isSidebarNav, toggleSidebar, props}) => {
+const Nav = (props) => {
     const classes = [];
 
-    if(isSidebarNav){
+    if(props.isSidebarNav){
         classes.push('nav--sidebar')
     }
     return (

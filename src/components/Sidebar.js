@@ -10,10 +10,10 @@ import Nav from './Nav'
 import AnswerMode from './AnswerMode'
 import LanguageSwitcher from './LanguageSwitcher'
 
-const Sidebar = ({toggleSidebar, answerMode, onChangeAnswerMode}) => {
+const Sidebar = (props) => {
     const classes = []
 
-    if(toggleSidebar){
+    if(props.toggleSidebar){
         classes.push('active');
     }
     else{
@@ -22,6 +22,7 @@ const Sidebar = ({toggleSidebar, answerMode, onChangeAnswerMode}) => {
 
     // sidebar nav
     let isSidebarNav = true;
+
     return (
         <div className={`sidebar ${classes.join(' ')}`}>
             <div className="sidebar__inner">
@@ -38,7 +39,7 @@ const Sidebar = ({toggleSidebar, answerMode, onChangeAnswerMode}) => {
                     <h4 className="sidebar__title">Settings</h4>
                     <div className="sidebar__block-content">
                         <div className="sidebar__block-item">
-                            <AnswerMode answerMode={answerMode} onToggleAnswerMode={onChangeAnswerMode}/>
+                            <AnswerMode answerMode={props.answerMode} onToggleAnswerMode={props.onChangeAnswerMode}/>
                         </div>
                         <div className="sidebar__block-item">
                             <LanguageSwitcher/>

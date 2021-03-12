@@ -1,11 +1,11 @@
 import React from "react";
 
-const AnswerMode = ({answerMode, onToggleAnswerMode}) => {
+const AnswerMode = (props) => {
   // console.log(answerMode)
   return (
     <label className="check" htmlFor="checkbox">
         <p className="check__text">Hard mode</p>
-        <input id="checkbox" className="check__input" type="checkbox" onChange={onToggleAnswerMode} checked={answerMode}/>
+        <input id="checkbox" className="check__input" type="checkbox" onChange={props.onToggleAnswerMode} checked={props.answerMode}/>
         <span className="check__slider"></span>
     </label>
   );

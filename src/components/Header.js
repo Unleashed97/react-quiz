@@ -3,13 +3,13 @@ import React from 'react'
 import Nav from './Nav';
 import Burger from './Burger';
 
-const Header = ({toggleSidebar, props}) => {
+const Header = (props) => {
     return (
         <header className="header">
             <div className="container">
                 <div className="header__inner">
-                    <Nav toggleSidebar={toggleSidebar} props={props}/>
-                    <Burger toggleSidebar={toggleSidebar} handleBurgerBtnClick={props}/>
+                    <Nav />
+                    <Burger toggleSidebar={props.toggleSidebar} handleBurgerBtnClick={props.onSidebarToggling}/>
                 </div>
             </div>
         </header>

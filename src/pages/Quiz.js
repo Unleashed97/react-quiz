@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 
-
 import quiz from '../data/quiz';
 
 import AnswerMode from '../components/AnswerMode';

@@ -23,18 +23,16 @@ function App() {
     setToggleSidebar(!toggleSidebar);
   }
 
-
   // Answer mode
   const handleCheckboxClick = () =>{
     setAnswerMode(!answerMode);
 }
   
   return (
-
     <div className="wrapper">
       <div className="main">
         <HashRouter basename="/">
-          <Header toggleSidebar={toggleSidebar} props={sidebarToggling}/>
+          <Header toggleSidebar={toggleSidebar} onSidebarToggling={sidebarToggling}/>
           <Route exact path="/" component={Home} />
           <Route exact path="/quiz">
             <Quiz answerMode={answerMode} onChangeAnswerMode={handleCheckboxClick}/>
@@ -42,7 +40,6 @@ function App() {
         </HashRouter>
       </div>
       <Sidebar toggleSidebar={toggleSidebar} answerMode={answerMode} onChangeAnswerMode={handleCheckboxClick}/>
-      
     </div>
   );
 }
