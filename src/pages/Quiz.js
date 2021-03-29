@@ -20,6 +20,7 @@ const Quiz = ({answerMode, onChangeAnswerMode}) => {
 
     const [inputAnswer, setInputAnswer] = useState('');
 
+    // Test mode: choose the answer
     const handleAnswerClick = (isCorrect) =>{
         if(isCorrect === true){
             setScore(score + 1);
@@ -33,16 +34,19 @@ const Quiz = ({answerMode, onChangeAnswerMode}) => {
         }
     }
 
+    
     const handleCheckAnswersBtnClick = () =>{
 
     }
 
+    // Show score block, try again button click (start the same quiz again)
     const handleTryAgainbtnClick = ()=> {
         setShowScore(false);
         setScore(0);
         setCurrentQuestion(0);
     }
 
+    // Hard mode: submit form after typing the asnwer in the inputBox
     const handleSubmitAnswerForm = (event) =>{
         event.preventDefault();
 
@@ -75,51 +79,55 @@ const Quiz = ({answerMode, onChangeAnswerMode}) => {
 
 
     return (
-        <div className="quiz">
-            <div className="container">
-                <div className="quiz__inner">
-                    <h1 className="quiz__title">European capitals</h1>
-                    {
-                        showScore ? (
-                            <QuizScore score={score} handleCheckAnswersBtnClick={handleCheckAnswersBtnClick} handleTryAgainbtnClick={handleTryAgainbtnClick}/>
-                        ) :
-                            
-                        (
-                            <div className="quiz__content">
-                                <QuizImage currentQuestion={currentQuestion}/>
-                                <div className="quiz__text-block">
-                                    <div className="control">
-                                        <h6 className="control__title">Settings</h6>
-                                        <div className="control__content">
-                                            <div className="control-item">
-                                                <AnswerMode answerMode={answerMode} onToggleAnswerMode={onChangeAnswerMode}/>
+        <div className="main-content">
+            <section className="section section--quiz">
+                <div className="container">
+                    <div className="section__inner">
+                        <h1 className="section__title">European capitals</h1>
+                        <div className="section__content">
+                        {
+                            showScore ? (
+                                <QuizScore score={score} handleCheckAnswersBtnClick={handleCheckAnswersBtnClick} handleTryAgainbtnClick={handleTryAgainbtnClick}/>
+                            ) :
+                                
+                            (
+                                <>
+                                        <QuizImage currentQuestion={currentQuestion}/>
+                                        <div className="quiz__text-block">
+                                            <div className="control">
+                                                <h6 className="control__title">Settings</h6>
+                                                <div className="control__content">
+                                                    <div className="control-item">
+                                                        <AnswerMode answerMode={answerMode} onToggleAnswerMode={onChangeAnswerMode}/>
+                                                    </div>
+                                                </div>
                                             </div>
+                                            <div className="quiz__question">
+                                                <h3 className="quiz__question-title">{currentQuestion + 1}/<span>{quiz.length}</span> {quiz[currentQuestion].questionText}</h3>
+                                            </div>
+                                            <div className="quiz__answer">
+                                                {
+                                                    answerMode ? (
+                                                        <InputAnswer formAnswerSubmit={handleSubmitAnswerForm} inputAnswer={inputAnswer} setInputAnswer={setInputAnswer}/>
+                                                    ) :
+
+                                                    (
+                                                        quiz[currentQuestion].answerOptions.map( (item, index) => (
+                                                            <button className="btn" key={index} onClick={()=> handleAnswerClick(item.isCorrect)}>{item.answerText}</button>
+                                                        ))
+                                                    )      
+
+                                                }
+                                            </div>
+                                            {/* <QuizAnswer answerMode={answerMode} inputAnswer={inputAnswer} currentQuestion={currentQuestion} setInputAnswer={setInputAnswer} onSubmitAnswer={handleSubmitAnswerForm} onAnswerClick={handleAnswerClick}/> */}
                                         </div>
-                                    </div>
-                                    <div className="quiz__question">
-                                        <h3 className="quiz__question-title">{currentQuestion + 1}/<span>{quiz.length}</span> {quiz[currentQuestion].questionText}</h3>
-                                    </div>
-                                    <div className="quiz__answer">
-                                        {
-                                            answerMode ? (
-                                                <InputAnswer formAnswerSubmit={handleSubmitAnswerForm} inputAnswer={inputAnswer} setInputAnswer={setInputAnswer}/>
-                                            ) :
-
-                                            (
-                                                quiz[currentQuestion].answerOptions.map( (item, index) => (
-                                                    <button className="btn" key={index} onClick={()=> handleAnswerClick(item.isCorrect)}>{item.answerText}</button>
-                                                ))
-                                            )      
-
-                                        }
-                                    </div>
-                                    {/* <QuizAnswer answerMode={answerMode} inputAnswer={inputAnswer} currentQuestion={currentQuestion} setInputAnswer={setInputAnswer} onSubmitAnswer={handleSubmitAnswerForm} onAnswerClick={handleAnswerClick}/> */}
-                                </div>
-                            </div>
-                        )
-                    }
-                 </div>
-            </div>
+                                </>
+                            )
+                        }
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     )
 }

@@ -2,7 +2,7 @@
     display: block;
     width: 30px;
     height: 26px;
-    margin-left: 50px;
+    margin-left: 5%;
     cursor: pointer;
     // btn
     border: 0;
@@ -21,6 +21,21 @@
         .burger__item{
             background-color: $secondary;
         }
+
+        // .burger__item:nth-child(2){
+        //     transform: translateX(30px);
+        //     opacity: 0;
+        // }
+
+        // .burger__item:nth-child(1){
+        //     transform-origin: top left;
+        //     transform: rotate(45deg) translateY(2px);
+        // }
+
+        // .burger__item:nth-child(3){
+        //     transform-origin: bottom left;
+        //     transform: rotate(-45deg) translateY(-2px);
+        // }
     }
 
     &__item{
@@ -29,9 +44,9 @@
         margin-bottom: 8px;
         border-radius: 20px;
         background-color: $primary;
-        transition: background .2s linear;
-
-        
+        transition: background .2s linear,
+            opacity .2s linear,
+            transform .2s linear;
 
         &:last-child{
             margin-bottom: 0;

@@ -1,7 +1,5 @@
 import React from 'react'
 
-import ru from '../images/icons/ru.png'
-import uk from '../images/icons/en.png'
 
 const LanguageSwitcher = () => {
 

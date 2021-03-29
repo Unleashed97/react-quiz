@@ -2,7 +2,13 @@
     padding-top: 50px;
     &__inner{
         display: flex;
+        justify-content: flex-end;
         align-items: center;
-        height: 60px;
+        // height: 60px;
+    }
+
+    // MEDIA
+    @media (max-width: $mobile){
+        padding-top: 10px;
     }
 }

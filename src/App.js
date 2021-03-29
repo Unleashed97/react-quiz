@@ -23,6 +23,14 @@ function App() {
     setToggleSidebar(!toggleSidebar);
   }
 
+  // Burger btn click
+  const classes = [];
+  
+  if(toggleSidebar){
+    classes.push('active')
+  }
+  else classes.pop()
+
   // Answer mode
   const handleCheckboxClick = () =>{
     setAnswerMode(!answerMode);
@@ -30,7 +38,7 @@ function App() {
   
   return (
     <div className="wrapper">
-      <div className="main">
+      <div className={`main ${classes.join(' ')}`}>
         <HashRouter basename="/">
           <Header toggleSidebar={toggleSidebar} onSidebarToggling={sidebarToggling}/>
           <Route exact path="/" component={Home} />

@@ -16,12 +16,35 @@
     font-weight: 700;
     font-size: 15px;
     color: #fff;
-    height: 100vh;
+    min-height: 100vh;
     background: linear-gradient(to bottom right, #B08AF7, #3d1e77);
     overflow: hidden;
 }
 .main{
+    position: relative;
+    overflow: hidden;
+    z-index: 3;
     width: 100%;
+    box-shadow: 3px 0 5px rgba(#000, .5);
+    transition: transform .3s linear;
+
+    &.active{
+        transform: translateX(-300px);
+        
+    }
+
+    // MEDIA
+
+    @media (max-width: $tablet){
+        &.active{
+            transform: translateX(-35%);
+        }
+    }
+    @media (max-width: $mobile){
+        &.active{
+            transform: translateX(-80%);
+        }
+    }
 }
 
 .container{
@@ -57,14 +80,12 @@
     }
 
     &--score{
-        width: 15%;
         margin-bottom: 0;
         margin-right: 2%;
         &:last-child{
             margin-right: 0;
         }
     }
-
 }
 
 @import 'components/header';

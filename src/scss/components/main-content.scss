@@ -1,3 +1,8 @@
 .main-content{
     margin-top: 50px;
+
+    // MEDIA
+    @media(max-width: $mobile){
+        margin-top: 20px;
+    }
 }

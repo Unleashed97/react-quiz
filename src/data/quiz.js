@@ -1,7 +1,7 @@
 const quiz = [
     // Western Europe
     {
-      questionText: 'What the capital of Austia?',
+      questionText: 'What the capital of Austria?',
       questionImage: 'images/austria.jpg',
       answerOptions: [
         { answerText: 'England', isCorrect: false },

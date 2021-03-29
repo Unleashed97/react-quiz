@@ -1,6 +1,7 @@
 import React from 'react'
 
 const Main = () => {
+    
     return (
         <main className="main-content">
             <section className="section">
