@@ -1,5 +1,11 @@
 import React from 'react'
 
+import {
+    HashRouter,
+    Route,
+    Link
+  } from "react-router-dom";
+
 const Home = () => {
     return (
         <main className="main-content">
@@ -10,13 +16,13 @@ const Home = () => {
                         <div className="section__content">
                             {/* Cards */}
                             <div className="cards-list">
-                                <a href="/#" className="card">
+                                <Link to="/quiz" className="card">
                                     <div className="card__mask"></div>
                                     <p className="card__title">
                                         Capitals <br/>
                                         <span>- of -</span> <br/>
                                         Europe</p>
-                                </a>
+                                </Link>
                                 <a href="/#" className="card">
                                 <p className="card__title">
                                         Capitals <br/>

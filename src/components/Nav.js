@@ -10,6 +10,8 @@ import Burger from './Burger';
 const Nav = (props) => {
     const classes = [];
 
+    // clicking by the menu item is closing down the sidebar
+
     if(props.isSidebarNav){
         classes.push('nav--sidebar')
     }

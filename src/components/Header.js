@@ -8,7 +8,7 @@ const Header = (props) => {
         <header className="header">
             <div className="container">
                 <div className="header__inner">
-                    <Nav />
+                    <Nav toggleSidebar={props.toggleSidebar}/>
                     <Burger toggleSidebar={props.toggleSidebar} handleBurgerBtnClick={props.onSidebarToggling}/>
                 </div>
             </div>
