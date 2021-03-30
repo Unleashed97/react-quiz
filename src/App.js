@@ -1,4 +1,7 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
+
+import firebase from 'firebase/app';
+import database from 'firebase/database';
 
 import {
   HashRouter,
@@ -18,6 +21,15 @@ function App() {
   const [toggleSidebar, setToggleSidebar] = useState(false);
 
   const [answerMode, setAnswerMode] = useState(false);
+
+  const [db, setDb] = useState(firebase.database())
+
+  // Firebase
+  useEffect(()=>{
+    console.log(db);
+  })
+  // const db = firebase.database();
+  // console.log(db);
 
   const sidebarToggling = ()=>{
     setToggleSidebar(!toggleSidebar);
